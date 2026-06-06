@@ -1,0 +1,383 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f9fbff;
+  color: #0a1a3a;
+}
+
+/* ================= HEADER ================= */
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 5px 20px #0f0d1b;
+  z-index: 1000;
+}
+
+.logo img{
+    width: 4rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #0a1a3a;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #291964;
+}
+
+/* ================= HAMBURGER ================= */
+.menu-btn {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100vh;
+  background: #291964;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: 0.4s;
+  z-index: 2000;
+}
+
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.sidebar.active {
+  right: 0;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 1500;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* ================= HERO ================= */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 120px 50px;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #291964, #ffffff);
+}
+
+ .hero-bg {
+    position: absolute; inset: 0;
+    background: url('/images/travel.png') center/cover no-repeat;
+    filter: brightness(0.45);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(120deg, #291964, #ffffff);
+  }
+
+.hero-content {
+  position: relative; z-index: 2;
+  max-width: 680px; margin-left: 10%;
+  animation: tracking-in-expand-fwd-bottom 1.2s ease-out 0.8s both;;
+}
+
+.hero h1 {
+  font-size: 42px;
+  color: #fff;
+}
+
+.hero p {
+  margin: 20px 0;
+  color: #eaeaea;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.primary {
+  background: #a67634;
+  color: #fff;
+}
+
+.secondary {
+  background: #fff;
+  color: #291964;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+  padding: 80px 50px;
+}
+
+.section.alt {
+  background: #eef4ff;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+/* ================= GRID ================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* ================= CARDS ================= */
+.card, .job-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.card:hover, .job-card:hover {
+  transform: translateY(-5px);
+}
+
+.apply-btn a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.card i {
+  font-size: 30px;
+  color: #291964;
+  margin-bottom: 10px;
+}
+
+/* ================= DESTINATION ================= */
+.destination {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.destination img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.destination h3 {
+  padding: 10px;
+}
+
+/* ================= JOB BUTTON ================= */
+.apply-btn {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #291964;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+/* ================= TESTIMONIAL ================= */
+.testimonial {
+  display: none;
+  text-align: center;
+}
+
+.testimonial.active {
+  display: block;
+}
+
+/* ================= CONTACT ================= */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.contact-form button {
+  background: #291964;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background: #0a1a3a;
+  color: #fff;
+  padding: 50px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.footer a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin: 5px 0;
+}
+
+/* ================= WHATSAPP ================= */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: #fff;
+  font-size: 28px;
+  padding: 12px;
+  border-radius: 50%;
+  z-index: 999;
+  animation: heartbeat 3s ease-in-out infinite;
+}
+
+/* ANIMATION */
+@keyframes tracking-in-expand-fwd-bottom {
+  0% {
+    letter-spacing: -0.5em;
+    transform: translateZ(-700px) translateY(500px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    transform: scale(0.91);
+    animation-timing-function: ease-in;
+  }
+  17% {
+    transform: scale(0.98);
+    animation-timing-function: ease-out;
+  }
+  33% {
+    transform: scale(0.87);
+    animation-timing-function: ease-in;
+  }
+  45% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
+
+/* RESPONSIVE  */
+@media (max-width: 768px) {
+  .logo img {
+    width: 2.8rem;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 20px 50px;
+    min-height: auto;
+    height: auto;
+  }
+
+   .hero-bg {
+    height: 28rem;
+    position: absolute; inset: 0;
+    background: url('/images/travel.png') center/cover no-repeat;
+    filter: brightness(-1.45);
+  }
+  .hero-overlay {
+    position: absolute; 
+    inset: 0;
+    background: linear-gradient(120deg, #291964, #ffffff);
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 100%;
+    margin: 0;
+    animation: tracking-in-expand-fwd-bottom 1.2s ease-out 0.8s both;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+}
